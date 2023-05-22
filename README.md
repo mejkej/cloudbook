@@ -44,3 +44,5 @@ https://www.pexels.com/sv-se/foto/natur-himmel-solnedgang-moln-2114014/ bg img
 https://tinypng.com/ compressed
 
 favicon 
+
+https://icons8.com/icon/83179/logout logout icons <a target="_blank" href="https://icons8.com/icon/83179/logout">Logout</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

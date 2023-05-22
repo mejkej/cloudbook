@@ -11,11 +11,16 @@
 </head>
 
 <body>
+    
     <header>
-        <nav><icon></icon></nav>
-        <nav><icon></icon></nav>
-        <nav><icon></icon></nav>
-        <nav><icon></icon></nav>
+
+        {% if user.is_authenticated %}
+        <nav>
+            <a></a>
+
+            <a href="#" alt="signout"><img href="{% static 'imgs/sigouticon.png' %}"></a>
+        </nav>
+        {% endif %}
     </header>
 
     <main>
