@@ -37,3 +37,10 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 ---
 
 Happy coding!
+
+
+https://www.pexels.com/sv-se/foto/natur-himmel-solnedgang-moln-2114014/ bg img
+
+https://tinypng.com/ compressed
+
+favicon 
