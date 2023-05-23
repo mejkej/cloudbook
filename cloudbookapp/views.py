@@ -8,3 +8,4 @@ def base_view(request):
 
     else:
         return render(request, 'base.html')
+
