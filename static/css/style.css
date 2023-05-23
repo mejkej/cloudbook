@@ -13,8 +13,10 @@ body {
 }
 
 header {
-    height:15%;
+    text-align: center;
+    height:auto;
     width:100%;
+    padding-bottom:10px;
 }
 
 nav ul {
@@ -23,5 +25,34 @@ nav ul {
     justify-content: space-evenly;
 }
 
+h1 {
+    color:white;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+main {
+    height:70vh;
+    width:100vw;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.maindiv{
+    border:5px solid gold;
+    border-radius:10%;
+    width:80vw;
+    max-width: 700px;
+    max-height:800px;
+    height:fit-content;
+}
+
+footer {
+    display:flex;
+    width:100vw;
+
+}
 
 
