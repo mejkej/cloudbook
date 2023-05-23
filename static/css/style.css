@@ -31,24 +31,35 @@ h1 {
     margin-right: 10%;
 }
 
+.signinorupanchor {
+    color:gold;
+}
 
+.signinorupanchor:hover{
+    color:black;
+}
 
 main {
-    height:70vh;
+    height:60vh;
     width:100vw;
     display:flex;
     justify-content: space-evenly;
 }
 
-.maindiv{
+.maindiv {
     border:5px solid gold;
     border-radius:10%;
-    width:80vw;
-    max-width: 700px;
-    max-height:800px;
+    padding:5%;
+    align-items:normal;
+    width:fit-content;
     height:fit-content;
+    background-color: black;
 }
+.maindiv h2 {
+    color:white;
+    margin-top:0;
 
+}
 footer {
     display:flex;
     width:100vw;

@@ -15,7 +15,7 @@
 <header>
     <h1>Welcome to Cloud Book</h1>
         <nav>
-            <a href=""><h3>To Sign Up?</h3></a>
+            <a class="signinorupanchor" href="{% url 'signup' %}"><h3>To Sign Up?</h3></a>
         </nav>
 </header>
 
@@ -23,6 +23,15 @@
 
     <div class="maindiv">
         <h2>Sign In</h2>
+        
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% for field in form %}
+            <p> {{ field }} </p>
+            {% endfor %}
+
+            <button class="submitformbtn" value="form" name="form" type="submit">Submit</button>
+        </form>
 
     </div>
 
@@ -31,6 +40,6 @@
 <footer>
 
 </footer>
-    
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
