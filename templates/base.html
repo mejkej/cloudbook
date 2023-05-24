@@ -15,11 +15,13 @@
 <header>
     <nav>
         <ul>
-            <li><button id="dropdownbtn"><img src="{% static 'imgs/dropdownicon.png' %}"></button></li>
+            <li></li>
 
             <li><a href="">a</a></li>
 
-            <li><a href=""><img src="{% static 'imgs/signouticon.png' %}" alt="sign out button"></img></a></li>
+            <li><a href="{% url 'signin' %}">
+                    <img src="{% static 'imgs/signouticon.png' %}" alt="sign out button"></img>
+                </a><h4 id="signouth4">Sign Out</h4></li>
         </ul>
     </nav>    
 </header>
@@ -27,7 +29,8 @@
 <main>
     <div class="maindiv">
 
-        <h2>apa</h2>
+        <button id="dropdownbtn"><img src="{% static 'imgs/dropdownicon.png' %}"></button>
+        <h3>title</h3>
 
     </div>
 

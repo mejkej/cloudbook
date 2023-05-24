@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
-from django.core.exceptions import ValidationError
 
 # Create your views here.
 
@@ -13,6 +12,8 @@ def signup_view(request):
             form.save()
             return redirect('signin')
         
+        elif form.is_valid == 'False':
+            messages.error(request, 'Not good enough')
     else:
         form = CustomUserCreationForm()
         return render(request, 'signup.html', {'form': form})
@@ -29,8 +30,8 @@ def signin_view(request):
                 login(request, user)
                 return redirect('base')
 
-            if user is None:
-                raise ValidationError('Username or Password incorrect.')
+            else:
+                messages.error(request, 'Username or Password Incorrect.')
 
     else:
         form = CustomAuthenticationForm()
