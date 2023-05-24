@@ -34,18 +34,18 @@ h1 {
 }
 
 .signinorupanchor {
-    color:rgb(53, 46, 9);
+    color:black;
 }
 
 .signinorupanchor:hover{
-    color:black;
+    color:gold;
 }
 
 main {
     height:60vh;
     width:100vw;
     display:flex;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
 }
 
 .maindiv {
@@ -58,9 +58,8 @@ main {
     background-color: black;
 }
 .maindiv h2 {
-    color:white;
+    color:gold;
     margin-top:0;
-
 }
 footer {
     display:flex;

@@ -47,6 +47,8 @@ https://www.pinterest.se/pin/168814686018326830/ favicon
 
 https://favicon.io/favicon-converter/ favicon converter
 
+https://icons8.com/icons/set/dropdown-icon
 
+https://icons8.com/icons/set/logout
 
 {% if user.is_authenticated %} {% endif %}
