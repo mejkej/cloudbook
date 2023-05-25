@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -37,9 +37,16 @@ def signin_view(request):
         return render(request, 'signin.html', {'form': form})
 
 
+@login_required
 def base_view(request):
     if request.method == 'POST':
         return render(request, 'base.html')
 
     else:
         return render(request, 'base.html')
+
+
+    
+def signout_view(request):
+    logout(request)
+    return redirect('signin')
