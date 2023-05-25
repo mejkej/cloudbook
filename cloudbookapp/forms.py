@@ -19,7 +19,7 @@ class CustomUserCreationForm(UserCreationForm):
     password2 = forms.CharField(
         max_length=20,
         min_length=5,
-        widget=forms.PasswordInput(attrs={'placeholder': 'Comfirm Password'}),
+        widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}),
     )
 
     class Meta:

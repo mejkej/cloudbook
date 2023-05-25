@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
 
 # Create your views here.
+
+
 
 def signup_view(request):
     if request.method == 'POST':
@@ -13,9 +15,7 @@ def signup_view(request):
         if form.is_valid():
             form.save()
             return redirect('signin')
-        
-        elif form.is_valid == 'False':
-            messages.error(request, 'Not good enough')
+ 
     else:
         form = CustomUserCreationForm()
         return render(request, 'signup.html', {'form': form})
@@ -26,21 +26,17 @@ def signin_view(request):
         form = CustomAuthenticationForm(data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=raw_password)
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
                 return redirect('base')
-
-            else:
-                messages.error(request, 'Username or Password Incorrect.')
-
+            
     else:
         form = CustomAuthenticationForm()
         return render(request, 'signin.html', {'form': form})
 
 
-@login_required
 def base_view(request):
     if request.method == 'POST':
         return render(request, 'base.html')
