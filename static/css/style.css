@@ -88,10 +88,18 @@ button {
     border-radius: 10%;
 }
 
-.error {
-    color:red;
-
+.success {
+    color:green;
 }
+
+.errorlist {
+    list-style-type:none;
+    text-align: center;
+    color:red;
+    padding:0;
+}
+
+
 
 footer {
     display:flex;

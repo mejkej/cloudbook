@@ -12,10 +12,11 @@ def signup_view(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Welcome! Lets Sign in.')
             return redirect('signin')
     
         else:
-            messages.error(request, 'Sign Up Error.')
+            messages.error(request, '')
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form': form})
@@ -30,6 +31,7 @@ def signin_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
+                messages.success(request, 'Welcome back!')
                 return redirect('base')
         else:
             messages.error(request, 'Sign In Error.')

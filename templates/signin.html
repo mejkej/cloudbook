@@ -28,15 +28,16 @@
 
             {% csrf_token %}
 
-            {{ form.non_field_errors }}
-
 
             {% for field in form %}
-    
-
-            <p class="errors"> {{ field.errors }} </p>
 
                 <p> {{ field }} </p>
+
+                {% if field.errors %}
+
+                {{ field.errors }}
+
+                {% endif %}
 
                 {% endfor %}
         

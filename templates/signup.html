@@ -23,26 +23,25 @@
 
     <div class="maindiv">
         <h2>Sign Up</h2>
+        {% if messages %}
+        {% for message in messages %}
+        <h3 class="success">{{ message }}</h3>
+        {% endfor %}
+        {% endif %}
+
+
 
         <form method="post" class="form">
 
             {% csrf_token %}
 
             {% for field in form %}
-            <p>{{ field }} </p>
-               {% endfor %}
+            <p>{{ field }}</p>
 
-               {% if form.non_field_errors %}
-                <p class="error">{{ form.non_field_errors }}</p>
-                {% endif %}
-
-
-            {% if messages %}
-            {% for message in messages %}
-            <p class="error"> {{ message }} </p>
-            {% endfor %}
+            {% if field.errors %}
+            {{ field.errors }}
             {% endif %}
-
+            {% endfor %}
 
             <button class="submitformbtn" value="form" name="form" type="submit">Submit</button>
         </form>
