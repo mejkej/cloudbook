@@ -7,18 +7,18 @@ from .forms import CustomUserCreationForm, CustomAuthenticationForm
 
 # Create your views here.
 
-
-
 def signup_view(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('signin')
- 
+    
+        else:
+            messages.error(request, 'Sign Up Error.')
     else:
         form = CustomUserCreationForm()
-        return render(request, 'signup.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 
 def signin_view(request):
@@ -31,22 +31,18 @@ def signin_view(request):
             if user is not None:
                 login(request, user)
                 return redirect('base')
-            
+        else:
+            messages.error(request, 'Sign In Error.')
     else:
         form = CustomAuthenticationForm()
-        return render(request, 'signin.html', {'form': form})
+    return render(request, 'signin.html', {'form': form})
 
 
 @login_required
 def base_view(request):
-    if request.method == 'POST':
-        return render(request, 'base.html')
+    return render(request, 'base.html')
 
-    else:
-        return render(request, 'base.html')
-
-
-    
+@login_required
 def signout_view(request):
     logout(request)
     return redirect('signin')

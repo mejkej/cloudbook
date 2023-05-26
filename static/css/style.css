@@ -48,6 +48,7 @@ h3 {
 
 .signinorupanchor:hover{
     color:gold;
+
 }
 
 main { 
@@ -87,6 +88,10 @@ button {
     border-radius: 10%;
 }
 
+.error {
+    color:red;
+
+}
 
 footer {
     display:flex;
