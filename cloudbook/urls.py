@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from cloudbookapp import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signin/', views.signin_view, name='signin'),
     path('signup/', views.signup_view, name='signup'),
     path('', views.base_view, name='base'),
     path('signout/', views.signout_view, name='signout'),
+    path('note/', views.note_view, name='note'),
+    path('browse/', views.browse_notes, name='browse'),
 ]

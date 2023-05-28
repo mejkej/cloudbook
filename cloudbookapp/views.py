@@ -52,3 +52,12 @@ def signout_view(request):
     logout(request)
     return redirect('signin')
 
+
+@login_required
+def browse_notes(request):
+    return render(request, 'browse.html')
+
+
+@login_required
+def note_view(request):
+    return render(request, 'note.html')
