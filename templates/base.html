@@ -13,24 +13,22 @@
 <body>
 
 <header>
-    <nav>
-        <ul>
-            <li></li>
 
-            <li><a href="">a</a></li>
+    <nav class="basenavbar">
 
-            <li><a href="{% url 'signout' %}">
-                    <img src="{% static 'imgs/signouticon.png' %}" alt="sign out button"></img>
-                </a><h4 id="signouth4">Sign Out</h4></li>
-        </ul>
-    </nav>    
+        <a href="{% url 'signout' %}"><img src="{% static 'imgs/addnew.png' %}" alt="Add Note"></img></a>
+
+        <a href="{% url 'signout' %}"><img src="{% static 'imgs/browsenotes.png' %}" alt="Browse Notes"></img></a>
+
+        <a href="{% url 'signout' %}"><img src="{% static 'imgs/signouticon.png' %}" alt="sign out button"></img></a>
+
+    </nav>
+
 </header>
 
 <main>
     <div class="maindiv">
 
-        <button id="dropdownbtn"><img src="{% static 'imgs/dropdownicon.png' %}"></button>
-        <h3>title</h3>
 
     </div>
 
