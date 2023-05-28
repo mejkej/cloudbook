@@ -51,3 +51,4 @@ def base_view(request):
 def signout_view(request):
     logout(request)
     return redirect('signin')
+
