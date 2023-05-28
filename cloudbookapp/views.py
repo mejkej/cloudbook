@@ -46,7 +46,6 @@ def signin_view(request):
 def base_view(request):
     return render(request, 'base.html')
 
-@login_required
 def signout_view(request):
     logout(request)
     return redirect('signin')

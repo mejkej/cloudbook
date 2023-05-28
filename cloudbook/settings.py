@@ -27,6 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['cloudbook.herokuapp.com', '127.0.0.1', 'localhost']
@@ -96,7 +97,7 @@ dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 LOGIN_URL = 'signin'
 
-LOGOUT_URL = 'signout'
+LOGOUT_URL = 'signin'
 
 
 # Password validation
