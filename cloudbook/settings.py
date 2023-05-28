@@ -97,7 +97,7 @@ dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 LOGIN_URL = 'signin'
 
-LOGOUT_URL = 'signout'
+LOGOUT_URL = 'signin'
 
 
 # Password validation
