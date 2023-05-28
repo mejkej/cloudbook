@@ -12,11 +12,12 @@ def signup_view(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Welcome! Lets Sign in.')
-            return redirect('signin')
+            messages.success(request, 'Succesful !')
     
         else:
             messages.error(request, '')
+        return render(request, 'signup.html', {'form': form})
+            
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form': form})
@@ -37,6 +38,7 @@ def signin_view(request):
             messages.error(request, 'Sign In Error.')
     else:
         form = CustomAuthenticationForm()
+  
     return render(request, 'signin.html', {'form': form})
 
 

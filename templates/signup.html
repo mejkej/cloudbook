@@ -25,11 +25,13 @@
         <h2>Sign Up</h2>
         {% if messages %}
         {% for message in messages %}
-        <h3 class="success">{{ message }}</h3>
+        {% if message.tags == 'success' %}
+        <h3 id="signupsuccess"> {{ message }} </h3>
+        {% else %}
+        <h3> {{ message }} </h3>
+        {% endif %}
         {% endfor %}
         {% endif %}
-
-
 
         <form method="post" class="form">
 
