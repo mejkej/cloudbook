@@ -13,27 +13,32 @@
 <body>
 
 <header>
-
+    {% if user.is_authenticated %}
     <nav class="basenavbar">
 
-        {% if user.is_authenticated %}
-        <a href="{% url 'note' %}"><img src="{% static 'imgs/addnew.png' %}" alt="Add Note"></img></a>
+        <a class="addanchor" href="{% url 'note' %}"><img src="{% static 'imgs/addnew.png' %}" alt="Add Note"></img></a>
 
-        <a href="{% url 'browse' %}"><img src="{% static 'imgs/browsenotes.png' %}" alt="Browse Notes"></img></a>
+        <a class="browseanchor" href="{% url 'browse' %}"><img src="{% static 'imgs/browsenotes.png' %}" alt="Browse Notes"></img></a>
         
-        <a href="{% url 'signout' %}"><img src="{% static 'imgs/signouticon.png' %}" alt="sign out button"></img></a>
-        {% endif %}
+        <a class="signoutanchor" href="{% url 'signout' %}"><img src="{% static 'imgs/signouticon.png' %}" alt="sign out button"></img></a>
+    
     </nav>
+    {% endif %}
 
 </header>
 
 <main>
+    
     <div class="maindiv">
 
     </div>
+
 </main>
 
 <footer>
+
 </footer>
+
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

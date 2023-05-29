@@ -70,5 +70,3 @@ class CustomAuthenticationForm(AuthenticationForm):
         if not username or not password:
             raise forms.ValidationError('Username or password incorrect.')
         return cleaned_data
-
-        
