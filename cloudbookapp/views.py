@@ -55,9 +55,9 @@ def signout_view(request):
     return redirect('signin')
 
 
-# adding/editing note view
+# adding note view
 @login_required
-def note_view(request):
+def new_note_view(request):
     if request.method == 'POST': 
         form = NoteForm(request.POST)
         if form.is_valid():

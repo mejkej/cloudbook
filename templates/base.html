@@ -14,7 +14,7 @@
     {% if user.is_authenticated %}
     <nav class="basenavbar">
 
-        <a class="addanchor" href="{% url 'note' %}"><img src="{% static 'imgs/addnew.png' %}" alt="Add Note"></img></a>
+        <a class="addanchor" href="{% url 'newnote' %}"><img src="{% static 'imgs/addnew.png' %}" alt="Add Note"></img></a>
 
         <a class="browseanchor" href="{% url 'browse' %}"><img src="{% static 'imgs/browsenotes.png' %}" alt="Browse Notes"></img></a>
         
