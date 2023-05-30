@@ -30,7 +30,19 @@
 <main>
     
     <div class="maindiv">
+        {% csrf_token %}
+        {% if notes %}
+        <ul>
+            {% for note in notes %}
+        <li>
+            <h4>{{ note.title }}</h4>
+        </li>
+        </ul>
+        {% endfor %}
 
+        {% endif %}
+
+   
 
     </div>
 

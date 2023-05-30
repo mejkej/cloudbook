@@ -60,7 +60,7 @@ margin: 0 auto;
 }
 
 main { 
-    height:60vh;
+    height:70vh;
     width:100vw;
     display:flex;
     justify-content: space-around;
@@ -69,23 +69,34 @@ main {
 .maindiv {
     border:5px solid gold;
     border-radius: 10%;
-    padding: 5%;
-    width: fit-content;
+    padding: 2%;
     max-width: 700px;
     height:fit-content;
+    width:fit-content;
     background-color: black;
+    margin-left:5vw;
+    margin-right:5vw;
+}
+
+.maindiv #id_title {
+    max-width:90%;
+    margin: auto;
+}
+
+.maindiv #id_content {
+    max-width:90%;
+    margin: auto;
 }
 
 .maindiv h2 {
     color:white;
     margin-top: 0;
-
 }
 
-.maindiv #dropdownbtn {
-background-color: transparent;
-border:0;
+.maindiv h4 {
+    color:gold;
 }
+
 
 button {
     border:4px solid gold;

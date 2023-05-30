@@ -74,12 +74,6 @@ class CustomAuthenticationForm(AuthenticationForm):
         return cleaned_data
     
 class NoteForm(forms.ModelForm):
-    title = forms.CharField(
-        min_length=1,
-        max_length=50,
-        widget=forms.TextInput(attrs={'placeholder': 'Title'}),
-    )
-    
     class Meta:
         model = Note
         fields = ['title', 'content']

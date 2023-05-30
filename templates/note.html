@@ -30,13 +30,13 @@
 <main>
     
     <div class="maindiv">
-        {csrf_token}
         <form method="POST" class="form">
-        
+            {% csrf_token %}
             {% for field in form %}
+            <h4>{{ field.label_tag }}</h4>
             <p>{{ field }}</p>
             {% endfor %}
-            <button></button>
+            <button type="submit">Save</button>
         </form>
 
     </div>
