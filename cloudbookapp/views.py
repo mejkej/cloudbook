@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
-
+from .forms import NoteForm
 # Create your views here.
 
 def signup_view(request):
@@ -60,4 +60,13 @@ def browse_notes(request):
 
 @login_required
 def note_view(request):
-    return render(request, 'note.html')
+    if request.method == 'POST':
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            note = form.save()
+            return redirect('browse')
+
+
+    else:
+        form = NoteForm()
+    return render(request, 'note.html', {'form': form})

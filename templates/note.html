@@ -30,6 +30,14 @@
 <main>
     
     <div class="maindiv">
+        {csrf_token}
+        <form method="POST" class="form">
+        
+            {% for field in form %}
+            <p>{{ field }}</p>
+            {% endfor %}
+            <button></button>
+        </form>
 
     </div>
 

@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.contrib.auth.password_validation import get_default_password_validators
+from .models import Note
+
 
 class CustomUserCreationForm(UserCreationForm):
     username = forms.CharField(
@@ -70,3 +72,14 @@ class CustomAuthenticationForm(AuthenticationForm):
         if not username or not password:
             raise forms.ValidationError('Username or password incorrect.')
         return cleaned_data
+    
+class NoteForm(forms.ModelForm):
+    title = forms.CharField(
+        min_length=1,
+        max_length=50,
+        widget=forms.TextInput(attrs={'placeholder': 'Title'}),
+    )
+    
+    class Meta:
+        model = Note
+        fields = ['title', 'content']
