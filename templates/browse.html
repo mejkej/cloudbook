@@ -34,7 +34,7 @@
         <div class="browsenotes">
         {% if notes %}
         {% for note in notes %}
-        <h3><a href="{% url 'signout' %}">{{ note.title }}</a></h3>
+        <h3><a href="{% url 'read' pk=note.pk %}">{{ note.title }}</a></h3>
         
             
         {% endfor %}
