@@ -31,17 +31,22 @@
     
     <div class="maindiv">
         {% csrf_token %}
+        <div class="browsenotes">
         {% if notes %}
-        <ul>
-            {% for note in notes %}
-        <li>
-            <h4>{{ note.title }}</h4>
-        </li>
-        </ul>
+        {% for note in notes %}
+        <h3><a href="{% url 'signout' %}">{{ note.title }}</a></h3>
+        
+            
+        {% endfor %}
+        {% endif %}
+        </div>
+
+        {% if messages %}
+        {% for message in messages %}
+        <h2> {{ message }} </h2>
         {% endfor %}
         {% endif %}
 
-   
 
     </div>
 

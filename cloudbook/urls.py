@@ -26,4 +26,7 @@ urlpatterns = [
     path('signout/', views.signout_view, name='signout'),
     path('newnote/', views.new_note_view, name='newnote'),
     path('browse/', views.browse_notes, name='browse'),
+    path('read/<int:pk>', views.read_note, name='read'),
+    path('edit/<int:pk>', views.edit_note, name='edit'),
+    path('delete/<int:pk>', views.delete_note, name='delete'),
 ]

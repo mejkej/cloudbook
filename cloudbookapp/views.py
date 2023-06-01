@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -43,10 +43,6 @@ def signin_view(request):
   
     return render(request, 'signin.html', {'form': form})
 
-# Home view
-@login_required
-def base_view(request):
-    return render(request, 'base.html')
 
 # Logout view
 @login_required
@@ -54,8 +50,33 @@ def signout_view(request):
     logout(request)
     return redirect('signin')
 
+# End of Login, Logout and Register Views.
 
-# adding note view
+
+# Home view
+@login_required
+def base_view(request):
+    return render(request, 'base.html')
+
+
+# Browse note list view
+@login_required
+def browse_notes(request):
+    notes = Note.objects.filter(user=request.user)
+    if not notes:
+        messages.info(request, 'You have no saved notes')
+
+    return render(request, 'browse.html', {'notes': notes})
+
+
+# Read
+@login_required
+def read_note(request, pk):
+    note = get_object_or_404(Note, pk=pk)
+    return render(request, 'read.html', {'note': note})
+
+
+# Create
 @login_required
 def new_note_view(request):
     if request.method == 'POST': 
@@ -64,15 +85,32 @@ def new_note_view(request):
             note = form.save(commit=False)
             note.user = request.user
             note.save()
-            return redirect('browse')
+            return redirect('read', pk=note.pk)
         else:
             messages.error('Title must contain between 1 - 100 charachters')
     else:
         form = NoteForm()
     return render(request, 'note.html', {'form': form})
 
-# Browse note list view
+# Update
 @login_required
-def browse_notes(request):
-    notes = Note.objects.filter(user=request.user)    
-    return render(request, 'browse.html', {'notes': notes})
+def edit_note(request, pk):
+    note = get_object_or_404(Note, pk=pk)
+    if request.method == "POST":
+        form = NoteForm(request.POST, instance=note)
+        if form.is_valid():
+            note = form.save()
+            redirect('read', pk=note.pk)
+    else:
+        form = NoteForm(instance=note)
+    return render(request, 'edit.html', {'form': form})
+
+
+# Delete
+@login_required
+def delete_note(request, pk):
+    note = get_object_or_404(Note, pk=pk)
+    if request.method == "POST":
+        note.delete()
+        return redirect('browse')
+    return render(request, 'delete.html', {'note': note})
