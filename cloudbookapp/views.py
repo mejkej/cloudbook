@@ -100,7 +100,7 @@ def edit_note(request, pk):
         form = NoteForm(request.POST, instance=note)
         if form.is_valid():
             note = form.save()
-            redirect('read', pk=note.pk)
+            return redirect('read', pk=note.pk)
     else:
         form = NoteForm(instance=note)
     return render(request, 'edit.html', {'form': form})

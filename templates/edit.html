@@ -1,1 +1,17 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    <h4>{{ field.label_tag }}</h4>
+    <p>{{ field }}</p>
+    {% if field.errors %}
+    {{ field.errors }}
+    {% endif %}
+    {% endfor %}
+    <button type="submit">Save</button>
+</form>
+<button><a href="{% url 'base' %}">Exit</a></button>
+{% endblock %}
