@@ -39,10 +39,11 @@
             {{ field.errors }}
             {% endif %}
             {% endfor %}
+            
             <button type="submit">Save</button>
-            <button>Exit<a href="{% url 'base' %}"></a></button>
-        </form>
 
+            <button><a href="{% url 'base' %}">Exit</a></button>
+        </form>
     </div>
 
 </main>

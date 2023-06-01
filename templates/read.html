@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% csrf_token %}
 <h2>{{ note.title }}</h2>
 <div class="notecontentdiv">
 <p>{{ note.content }}</p>
+
 </div>
+<button><a href="{% url 'edit' pk=note.pk  %}">Edit</a></button>
+<button><a class="deletebtn" href="{% url 'delete' pk=note.pk  %}">Delete</a></button>
+<button><a href="{% url 'base' %}">Exit</a></button>
 {% endblock %}
 
