@@ -9,13 +9,14 @@
 <div class="notecontentdiv">
 
 <p>{{ note.content }}</p>
-<p>Created: {{ note.created_at }} Last updated: {{ note.updated_at }}</p>
+<p>Created: {{ note.created_at }} <br> Last Updated: {{ note.updated_at }}</p>
 
 </div>
-
+<div class="btns">
 <a href="{% url 'edit' pk=note.pk %}"><button>Edit</button></a>
 <a class="deletebtn" href="{% url 'delete' pk=note.pk %}"><button>Delete</button></a>
 <a href="{% url 'base' %}"><button>Close</button></a>
+</div>
 </div>
 {% endblock %}
 

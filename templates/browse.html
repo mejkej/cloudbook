@@ -9,7 +9,7 @@
         <div class="browsenotes">
         {% if notes %}
         {% for note in notes %}
-        <h3><a href="{% url 'read' pk=note.pk  %}">{{ note.title }} </a><p>Created: {{ note.created_at }} Last updated: {{ note.updated_at }}</p></h3> 
+        <h3><a href="{% url 'read' pk=note.pk  %}">{{ note.title }}</a><p>Created: {{ note.created_at }} <br> Last Updated: {{ note.updated_at }}</p></h3> 
         
         {% endfor %}
         {% endif %}
