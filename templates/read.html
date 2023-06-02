@@ -2,21 +2,19 @@
 
 {% block content %}
 <div class="maindiv">
-
-{% csrf_token %}
-<h2>{{ note.title }}</h2>
-
-<div class="notecontentdiv">
-
-<p>{{ note.content }}</p>
-<p>Created: {{ note.created_at }} <br> Last Updated: {{ note.updated_at }}</p>
-
-</div>
-<div class="btns">
-<a href="{% url 'edit' pk=note.pk %}"><button>Edit</button></a>
-<a class="deletebtn" href="{% url 'delete' pk=note.pk %}"><button>Delete</button></a>
-<a href="{% url 'base' %}"><button>Close</button></a>
-</div>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        <h2>{{ note.title }}</h2>
+        <div class="notecontentdiv">
+            <p>{{ note.content }}</p>
+            <p>Created: {{ note.created_at }} <br> Last Updated: {{ note.updated_at }}</p>
+        </div>
+        <div class="btns">
+            <button> <a href="{% url 'edit' pk=note.pk %}">Edit</a></button>
+            <button> <a href="{% url 'delete' pk=note.pk %}">Delete</a></button>
+            <button> <a href="{% url 'browse' %}">Back</a></button>
+        </div>
+    </form>
 </div>
 {% endblock %}
 

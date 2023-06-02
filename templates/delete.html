@@ -5,8 +5,10 @@
 <h2>Are you sure you want to delete this note?</h2>
 <form method="POST">
     {% csrf_token %}
+<div class="btns">
     <button type="submit">Delete</button>
 </form>
-<a href="{% url 'read' pk=note.pk %}"><button>Close</button></a>
+<button> <a href="{% url 'read' pk=note.pk %}">Back</a></button>
+</div>
 </div>
 {% endblock %}
