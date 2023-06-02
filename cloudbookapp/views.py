@@ -79,7 +79,7 @@ def read_note(request, pk):
 # Create
 @login_required
 def new_note_view(request):
-    if request.method == 'POST': 
+    if request.method == 'POST':
         form = NoteForm(request.POST)
         if form.is_valid():
             note = form.save(commit=False)
@@ -87,7 +87,7 @@ def new_note_view(request):
             note.save()
             return redirect('read', pk=note.pk)
         else:
-            messages.error('Title must contain between 1 - 100 charachters')
+            messages.error()
     else:
         form = NoteForm()
     return render(request, 'note.html', {'form': form})
