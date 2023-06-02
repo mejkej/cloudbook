@@ -1,34 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Cloud Book</title>
-</head>
-
-<body>
-
-<header>
-    {% if user.is_authenticated %}
-    <nav class="basenavbar">
-
-        <a class="addanchor" href="{% url 'newnote' %}"><img src="{% static 'imgs/addnew.png' %}" alt="Add Note"></img></a>
-
-        <a class="browseanchor" href="{% url 'browse' %}"><img src="{% static 'imgs/browsenotes.png' %}" alt="Browse Notes"></img></a>
-        
-        <a class="signoutanchor" href="{% url 'signout' %}"><img src="{% static 'imgs/signouticon.png' %}" alt="sign out button"></img></a>
-    
-    </nav>
-    {% endif %}
-
-</header>
-
-<main>
-    
+{% extends 'base.html' %}
+{% block content %}
     <div class="maindiv">
         <form method="POST" class="form">
             {% csrf_token %}
@@ -39,19 +10,10 @@
             {{ field.errors }}
             {% endif %}
             {% endfor %}
-            
+
             <button type="submit">Save</button>
 
-            <button><a href="{% url 'base' %}">Exit</a></button>
+            <button><a href="{% url 'base' %}">Close</a></button>
         </form>
     </div>
-
-</main>
-
-<footer>
-
-</footer>
-
-<script src="{% static 'js/script.js' %}"></script>
-</body>
-</html>
+{% endblock %}

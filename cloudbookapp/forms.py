@@ -74,6 +74,11 @@ class CustomAuthenticationForm(AuthenticationForm):
         return cleaned_data
     
 class NoteForm(forms.ModelForm):
+    title = forms.CharField(
+        min_length=1,
+        max_length=100,
+    )
+
     class Meta:
         model = Note
         fields = ['title', 'content']
