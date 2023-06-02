@@ -2,7 +2,7 @@
 {% block content %}
 <div class="maindiv">
     
-    <h2>Click note title for more options</h2>
+    <h1>Click note title for more options</h1>
 
         {% csrf_token %}
 
@@ -18,7 +18,7 @@
         {% if messages %}
         {% for message in messages %}
 
-        <h2> {{ message }} </h2>
+        <h2 class="success"> {{ message }} </h2>
 
         {% endfor %}
         {% endif %}

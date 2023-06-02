@@ -32,6 +32,10 @@ header .basenav a {
     border: 2px solid black;
 }
 
+main .success {
+    text-align: center;
+    margin:0 auto;
+}
 
 h1 {
     color:white;
@@ -88,18 +92,20 @@ main {
     height:70vh;
     width:100vw;
     justify-self: auto;
+    text-align: center;
 }
 
 .maindiv {
     display: flex;
     flex-direction: column;
-    max-width: 700px;
+    width:700px;
     min-width: 80%;
     margin: 0 auto;
     border:5px solid gold;
     border-radius: 10%;
     background-color: black;
     height:fit-content;
+    padding-bottom: 20px;
 }
 
 .maindiv h2 {
@@ -125,9 +131,17 @@ main {
     margin:20px;
 }
 
+.success {
+    color:rgb(35, 188, 12);
+}
+
 .notecontentdiv {
     width:80%;
+    height:250px;
+    overflow-x: auto;
     margin: 0 auto;
+    word-wrap: break-word;
+    white-space: pre-line;
 }
 
 

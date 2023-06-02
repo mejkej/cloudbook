@@ -48,6 +48,7 @@ def signin_view(request):
 @login_required
 def signout_view(request):
     logout(request)
+    messages.success(request, 'Signed out succesfully!')
     return redirect('signin')
 
 # End of Login, Logout and Register Views.
@@ -85,7 +86,9 @@ def new_note_view(request):
             note = form.save(commit=False)
             note.user = request.user
             note.save()
+            messages.success(request, 'New Note Saved!')
             return redirect('read', pk=note.pk)
+            
         else:
             messages.error()
     else:
@@ -100,6 +103,7 @@ def edit_note(request, pk):
         form = NoteForm(request.POST, instance=note)
         if form.is_valid():
             note = form.save()
+            messages.success(request, 'Update Saved!')
             return redirect('read', pk=note.pk)
     else:
         form = NoteForm(instance=note)
@@ -112,5 +116,6 @@ def delete_note(request, pk):
     note = get_object_or_404(Note, pk=pk)
     if request.method == "POST":
         note.delete()
+        messages.success(request, 'Note Deleted!')
         return redirect('browse')
     return render(request, 'delete.html', {'note': note})

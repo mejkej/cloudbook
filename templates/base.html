@@ -25,8 +25,14 @@
 </header>
 
 <main>
-        {% block content %}
-        {% endblock %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<h2 class="success"> {{ message }} </h2>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
 </main>
 
 <footer>
