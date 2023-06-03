@@ -2,18 +2,13 @@
 {% block content %}
 <div class="maindiv">
     <form method="POST" class="form">
+        <h2>Edit Note</h2>
         {% csrf_token %}
         {% for field in form %}
         <h4>{{ field.label_tag }}</h4>
         <p>{{ field }}</p>
-        {% if field.errors %}
-        {{ field.errors }}
-        {% endif %}
         {% endfor %}
-    <div class="btns">
         <button type="submit">Save</button>
     </form>
-        <a href="{% url 'base' %}"><button>Close</button></a>
-    </div>
 </div>
 {% endblock %}

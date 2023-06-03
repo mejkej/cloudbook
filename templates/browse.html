@@ -2,7 +2,7 @@
 {% block content %}
 <div class="maindiv">
     
-    <h2>Your notes</h2>
+    <h2>Your Notes:</h2>
 
         {% csrf_token %}
 
@@ -15,15 +15,14 @@
         </div>
         {% endfor %}
         {% endif %}
-        </div>
-
         {% if messages %}
         {% for message in messages %}
-
         <h2> {{ message }} </h2>
-
         {% endfor %}
         {% endif %}
+        </div>
+
+
     <a href="{% url 'base' %}"><button>Close</button></a>
 
 </div>

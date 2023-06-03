@@ -65,7 +65,7 @@ def base_view(request):
 def browse_notes(request):
     notes = Note.objects.filter(user=request.user)
     if not notes:
-        messages.info(request, 'You have no saved notes')
+        messages.info(request, 'No Saved Notes')
 
     return render(request, 'browse.html', {'notes': notes})
 
