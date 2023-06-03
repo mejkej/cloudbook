@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div class="maindiv">
     <form method="POST" class="form">
@@ -9,6 +10,7 @@
         <p>{{ field }}</p>
         {% endfor %}
         <button type="submit">Save</button>
+        <button type="button" id="exiteditnote">Exit</button>
     </form>
 </div>
 {% endblock %}
