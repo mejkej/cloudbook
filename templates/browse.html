@@ -2,15 +2,17 @@
 {% block content %}
 <div class="maindiv">
     
-    <h1>Click note title for more options</h1>
+    <h2>Your notes</h2>
 
         {% csrf_token %}
 
         <div class="browsenotes">
         {% if notes %}
         {% for note in notes %}
-        <h3><a href="{% url 'read' pk=note.pk  %}">{{ note.title }}</a><p>Created: {{ note.created_at }} <br> Last Updated: {{ note.updated_at }}</p></h3> 
-        
+        <div class="notediv">
+        <h3><a href="{% url 'read' pk=note.pk  %}">{{ note.title }}</a></h3>
+        <p>Created: {{ note.created_at }} <br> Last Updated: {{ note.updated_at }}</p>
+        </div>
         {% endfor %}
         {% endif %}
         </div>
@@ -18,7 +20,7 @@
         {% if messages %}
         {% for message in messages %}
 
-        <h2 class="success"> {{ message }} </h2>
+        <h2> {{ message }} </h2>
 
         {% endfor %}
         {% endif %}

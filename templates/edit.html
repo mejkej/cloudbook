@@ -1,17 +1,13 @@
 {% extends "base.html" %}
-
 {% block content %}
 <div class="maindiv">
-    
     <form method="POST" class="form">
         {% csrf_token %}
-
         {% for field in form %}
         <h4>{{ field.label_tag }}</h4>
         <p>{{ field }}</p>
         {% if field.errors %}
         {{ field.errors }}
-
         {% endif %}
         {% endfor %}
     <div class="btns">
