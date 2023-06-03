@@ -102,8 +102,11 @@ def edit_note(request, pk):
     if request.method == "POST":
         form = NoteForm(request.POST, instance=note)
         if form.is_valid():
-            note = form.save()
-            messages.success(request, 'Update Saved!')
+            if form.has_changed():
+                note = form.save()
+                messages.success(request, 'Updates Saved!')
+            else:
+                messages.info(request, 'No changes, Note Saved')
             return redirect('read', pk=note.pk)
     else:
         form = NoteForm(instance=note)

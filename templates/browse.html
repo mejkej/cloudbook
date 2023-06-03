@@ -3,8 +3,15 @@
 <div class="maindiv">
     
     <h2>Your Notes:</h2>
+        
 
         {% csrf_token %}
+
+        {% if messages %}
+        {% for message in messages %}
+        <h2> {{ message }} </h2>
+        {% endfor %}
+        {% endif %}
 
         <div class="browsenotes">
         {% if notes %}
@@ -13,11 +20,6 @@
         <h3><a href="{% url 'read' pk=note.pk  %}">{{ note.title }}</a></h3>
         <p>Created: {{ note.created_at }} <br> Last Updated: {{ note.updated_at }}</p>
         </div>
-        {% endfor %}
-        {% endif %}
-        {% if messages %}
-        {% for message in messages %}
-        <h2> {{ message }} </h2>
         {% endfor %}
         {% endif %}
         </div>
