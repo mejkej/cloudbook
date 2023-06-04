@@ -155,7 +155,7 @@ main {
 
 .notecontentdiv {
     width:80%;
-    height:250px;
+    height:200px;
     overflow-x: auto;
     margin: 0 auto;
     word-wrap: break-word;
@@ -215,7 +215,8 @@ footer {
 }
 
 footer .textdiv {
-    max-width: 80%;
+    width: 80%;
+    max-width: 700px;
     padding-bottom:20px;
     margin: 0 auto;
 }
