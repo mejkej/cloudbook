@@ -37,7 +37,7 @@ def signin_view(request):
                 messages.success(request, 'Welcome back!')
                 return redirect('base')
         else:
-            messages.error(request, 'Sign In Error.')
+            messages.error(request, 'Username or password incorrect.')
     else:
         form = CustomAuthenticationForm()
   

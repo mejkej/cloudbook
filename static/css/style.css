@@ -4,7 +4,7 @@ body {
     background-image: url('../imgs/bgimg.jpeg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     font-family: Helvetica, sans-serif;
     height:100vh;
     width:100vw;
@@ -196,6 +196,10 @@ button a:visited {
     color:rgb(35, 188, 12);
 }
 
+.maindiv.error {
+    color:red;
+}
+
 .errorlist {
     list-style-type:none;
     text-align: center;
@@ -205,6 +209,34 @@ button a:visited {
 
 footer {
     display:flex;
+    flex-direction: column;
     width:100vw;
+    height:fit-content;
+    margin:0;
+    border:5px solid black;
+    background-color: cadetblue;
+}
+
+footer .footerlist li {
+    list-style-type: none;
+    display:inline-flex;
+    height:auto;
+}
+
+footer a {
+    color:gold;
+}
+
+footer a:visited {
+    color:gold;
+}
+
+.disclaimer {
+    color:red;
+}
+
+footer h2 {
+    padding:5px;
+    margin:0px;
 }
 
