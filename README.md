@@ -46,10 +46,31 @@ There are two JavaScript files.
 ## The Backend
 
 ### Models
+User is djangos normal User but i just made a few adjustments to the username and password requirements by creating the CustomUserRegistrationForm, and CustomUserAuthenticationForm.
+
+Admin i created one super user account for me thats the only admin.
+
+The Note model. Foreign key with full CRUD. In other words, Note can only be seen by the specific user that created the note and the admin. Title must contain 1-50 characthers. Notes content only has a max length requirement of 1000 characthers.
+The note model has also has created_at and updated_at which is displayed when browsing or reading notes.
 
 ### Views
+1. signup_view
+2. signin_view
+3. signout_view
+4. base_view
+5. browse_notes
+6. read_note
+7. new_note_view
+8. edit_note
+9. delete_note
+
 
 ### Forms
+CustomUserRegistrationForm
+
+CustomUserAuthenticationForm
+
+NoteForm
 
 
 ## Formating, Validating, Testing & Final Photos
