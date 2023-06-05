@@ -1,3 +1,4 @@
+/* Closes new note and add note after a warning & confirmation */
 const exitNewFormBtn = document.getElementById('exitnewnote');
 
 

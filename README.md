@@ -20,7 +20,26 @@ The expansion possibilitys of this project is unlimited.
 7. Delete Note
 8. Browse All Notes
 
-## Navbar
+## The Frontend 
+### HTML
+There are 8 HTML templates.
+1. signin.html
+2. signup.html
+
+3. base.html
+4. browse.html
+5. read.html
+6. note.html
+7. delete.html
+8. edit.html
+
+### CSS
+
+### Javascript
+There are two JavaScript files.
+1. "signup.js" Pre authentication JS, Listens for signup success message, if signup is successful the anchor (To Sign In) gets assigned a class that will change its appearence.
+
+2. "script.js" To exit the add note or edit note i added a exit button. If this button is clicked, user gets a warning about potential unsaved changes and if confirmed gets redirected to dashboard (base.html).
 
 ## Video & Images
 
