@@ -1,5 +1,5 @@
 from django.contrib import admin
 from .models import Note
-# Register your models here.
+# Note model accessible for admin panel.
 admin.site.register(Note)
 

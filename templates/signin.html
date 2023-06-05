@@ -21,14 +21,15 @@
 
 <main>
 
-<div class="maindiv">
-    {% if messages %}
-    {% for message in messages %}
-    <h2> {{ message }} </h2>
-    {% endfor %}
-    {% endif %}
+    <div class="maindiv">
 
-    <h2>Sign In</h2>
+        {% if messages %}
+        {% for message in messages %}
+        <h2> {{ message }} </h2>
+        {% endfor %}
+        {% endif %}
+
+        <h2>Sign In</h2>
         
         <form method="POST" class="form">
 
@@ -40,17 +41,17 @@
 
                 {% endfor %}
         
-        <button class="submitformbtn" value="form" name="form" type="submit">Submit</button>
+            <button class="submitformbtn" value="form" name="form" type="submit">Submit</button>
             
-    </form>
-</div>
+        </form>
+    </div>
 </main>
 
 <footer>
     <div class="textdiv">
         <h3 class="disclaimer">Disclaimer!</h3>
         <p>Your Notes can currently be seen by yourself and the Admin aka me.
-            I am planing on changing this in the future to make a completely private and secure notes app.</p>
+        I am planing on changing this in the future to make a completely private and secure notes app.</p>
         <a target="blank" href="https://github.com/mejkej/cloudbook">Info, Resources & More!</a>
     </div>
 </footer>
