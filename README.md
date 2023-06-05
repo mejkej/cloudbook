@@ -10,7 +10,15 @@ and Cloudinary as static files storage.
 Notebook accessible anywhere with the total weight of 0 grams! Currently the users notes can only be seen by the user and the admin, In the future im planing to make it so that notes can only be seen by the user, and add some encryption for the notes.
 The expansion possibilitys of this project is unlimited.
 
-## The code:
+## Overview of the applications functionalitys:
+1. User Registration
+2. Login
+3. Logout
+4. Created New Note
+5. Read Note
+6. Edit Existing Note
+7. Delete Note
+8. Browse All Notes
 
 ## Navbar
 
@@ -34,7 +42,7 @@ The expansion possibilitys of this project is unlimited.
 [Favicon Converter](https://favicon.io/favicon-converter/)
 
 [Navigation Bar Icon Images from Icons8](https://icons8.com/)
-specific icon urls below:
+specific icon urls:
 [Logout](https://icons8.com/icons/set/logout)
 [Book](https://icons8.com/icons/set/book)
 [Add](https://icons8.com/icons/set/add)
