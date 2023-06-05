@@ -34,20 +34,21 @@ The expansion possibilitys of this project is unlimited.
 [Favicon Converter](https://favicon.io/favicon-converter/)
 
 [Navigation Bar Icon Images from Icons8](https://icons8.com/)
-
 specific icon urls below:
-https://icons8.com/icons/set/logout
-https://icons8.com/icons/set/book
-https://icons8.com/icons/set/add
+[Logout](https://icons8.com/icons/set/logout)
+[Book](https://icons8.com/icons/set/book)
+[Add](https://icons8.com/icons/set/add)
+
+
+[Code Institutes fullstack web development course material](https://codeinstitute.net/global/)
+
+[Geekforgeeks.org](https://www.geeksforgeeks.org/)
+
+[chatGPT](https://openai.com/)
 
 []()
-
 []()
-
 []()
-
-
-
-https://icons8.com/icons/set/logout
-https://icons8.com/icons/set/book
-https://icons8.com/icons/set/add
+[]()
+[]()
+[]()
