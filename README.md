@@ -34,6 +34,8 @@ There are 8 HTML templates.
 8. edit.html
 
 ### CSS
+"style.css"
+Only stylesheet for the project. styling made so that everything is responsive without any media querys. Made sure there is no horizontal scrolling.
 
 ### Javascript
 There are two JavaScript files.
@@ -41,9 +43,14 @@ There are two JavaScript files.
 
 2. "script.js" To exit the add note or edit note i added a exit button. If this button is clicked, user gets a warning about potential unsaved changes and if confirmed gets redirected to dashboard (base.html).
 
-## Video & Images
+## The Backend
 
-## Footer
+### Models
+
+### Views
+
+### Forms
+
 
 ## Formating, Validating, Testing & Final Photos
 
