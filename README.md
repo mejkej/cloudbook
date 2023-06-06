@@ -48,12 +48,15 @@ There are two JavaScript files.
 ## The Backend
 
 ### Models
-User is djangos normal User but i just made a few adjustments to the username and password requirements by creating the CustomUserRegistrationForm, and CustomUserAuthenticationForm.
+#### User model
+Djangos normal User but i made a few adjustments to the username and password requirements by editing the settings.py variable AUTH_PASSWORD_VALIDATORS & Creating the CustomUserRegistrationForm, and CustomUserAuthenticationForm.
 
-Admin i created one super user account for me thats the only admin.
+#### Admin 
+I created one superuser account for me thats the only admin.
 
-The Note model. Foreign key with full CRUD. In other words, Note can only be seen by the specific user that created the note and the admin. Title must contain 1-50 characthers. Notes content only has a max length requirement of 1000 characthers.
-The note model has also has created_at and updated_at which is displayed when browsing or reading notes.
+#### Note model
+Foreign key with full CRUD. In other words, Note can only be seen by the specific user that created the note and the admin. Title must contain 1-50 characthers. Note content only has a max length requirement of 1000 characthers.
+The note model also has created_at and updated_at which is displayed when browsing or reading notes.
 
 ### Views
 1. signin_view
@@ -85,31 +88,25 @@ This view displays an overview of the users notes, title, created at & updated a
 "delete.html" From read.html user has the option to delete a specific note. If button is clicked user is redirected to delete.html where user can either confirm and delete the form or go back.
 
 ### Forms
-1. CustomUserRegistrationForm
-#### Username
+#### 1. CustomUserRegistrationForm
+##### Username & clean_username():
 Username has following requirements:
 3-20 character long and has to be unique. If not unique the user will get an error message stating that the username is not available. Its also given placeholder attribute of Username. If to long or to short, the user will be informed about this aswell.
-#### Password1
-Has the placeholder 'Password', I set the min length to 5 in the form and in the settings.py.
+##### password1 & password2. clean_password1() & clean_password2()
+I set the min length to 5 in the form and in the settings.py.
 The clean_password1 function gets the AUTH_PASSWORD_VALIDATORS from the settings.py file.
-Incase of any errors the user will get the error messages without me having to add all the potential error messages manually.
-
-#### Password2
-Basically checks that password1 and password2 matches if not error message will be displayed stating that.
-If the match user is registered successfully!
+Incase of any errors the user will get the error messages without me having to add all the potential error messages manually. clean_password2 checks that password1 and password2 matches. If they dont, message will be displayed stating that. If they match user is registered successfully!
 
 
-2. CustomUserAuthenticationForm
-This form basically just requests a username and a password.
-It then compares the username and password to existing users.
-So either the username and password is found and user gets loged in or the user will get an error message stating that the username or the password is in correct.
+#### 2. CustomUserAuthenticationForm
+This form requests Username and Password. It then compares the username and password to existing usernames and passwords. So either the username and password is found and user gets loged in, or the user will get an error message stating that the username or the password is in correct.
 
 
-3. NoteForm
-This form just set title length to 1-50 charachters.
-added meta fields title & content.
+#### 3. NoteForm
+This Form requests a title of 1-50 characthers and has the two meta fields title & content.
+The content fields only requirement is that its input is shorter than 1000 characthers, but that is set in the Note model not in the form.
 
-
+## Testing
 ## Formating, Validating, Testing & Final Photos
 
 ## My personal thaught on the project
