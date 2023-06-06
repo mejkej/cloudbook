@@ -14,11 +14,11 @@ The expansion possibilitys of this project is unlimited.
 1. User Registration
 2. Login
 3. Logout
-4. Created New Note
+4. Create Note
 5. Read Note
-6. Edit Existing Note
+6. Edit Note
 7. Delete Note
-8. Browse All Notes
+8. Browse Notes
 
 ## The Frontend 
 ### HTML
@@ -148,7 +148,7 @@ specific icon urls:
 
 [Project images from amiresponsive](https://ui.dev/amiresponsive)
 
-[]()
+[TechWithTims Youtube channel](https://www.youtube.com/@TechWithTim/featured)
 []()
 []()
 []()
