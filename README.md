@@ -20,20 +20,30 @@ The expansion possibilitys of this project is unlimited.
 7. Delete Note
 8. Browse Notes
 
-## The Frontend 
-### HTML
-There are 8 HTML templates.
-1. signin.html
-2. signup.html
+## Views & Templates 
 
-These two templates has a different H1, Navbar and Js file than the others. They are the only pages accessible for unauthicated users. How ever the background, form container & footer is consistent to the other pages. 
+### Views
 
-3. base.html
-4. browse.html
-5. read.html
-6. note.html
-7. delete.html
-8. edit.html
+1. 'signin_view, signin.html' & 2. 'signup_view, signup.html'
+These are the only views without the @login_required decoration.
+Signin_view is the landing page, It contains a header with a H1 and a navbar with an anchor 'To Sign Up' Or 'To Sign In'. for the signup_view. Then comes the main and inside the main a div with the class "maindiv" this div is used on all views and templates but the base.html. The maindiv contains CustomAuthenticationForm or the CustomUserRegistrationForm. Input fields username & Password and a submit button. On the bottom of the page there is a footer.
+Signin & Signup looks more or less the same only the forms vary and for the signup i added some JS if signup is successful to direct the user to go to the signin page. The signup_view uses ValidationErrors to communicate potential issues with the signup process. The signin simply just displays the message "Username or password incorrect." incase of unsuccessful login attempt.
+
+#login_required on all these views below
+3. base_view, base.html the main template of all the other views. This is the page a successful login redirects to. It displayas the message Welcome! When signed in successfully. There is the navbar for authenticated users. That consist of 3 anchors with images wraped inside. Add new note, browse existing notes and signout. On the bottom of the page there is the footer.
+
+3. signout_view
+If the signout icon in the navbar for authenticated users is clicked this function will redirect them to the 'signin.html' all of the views except signin and signup is decorated with @login_required.
+
+6. note.html new_note_view by clicking the plus icon in the navbar you will be redirected to this page where you can write a new note. Title 1-50 characters, content 1-1000 characters. Each field requires atleast one character to be able to save the note by clicking the save button. There is also a exit button that if clicked user gets informed that if they exit the note has not been saved and if comfirmed redirected to the base.html.
+
+4. browse_view browse.html if the middle a is clicked the browse view will appear. The browse view is an overview of a users notes. So inside the maindiv there is 2 more divs. one that is vertically scrollable and contains all the notes and each note is also wraped in a div. Displaying the Title as an anchor and the created_at and updated_at stamps. If you click the anchor you will you will be redirected to read.html and the specific note by its primary key. If there is no Notes yet there will only be a message stating that.
+
+5. read.html read_view this view appears after you have saved a new note. It gets asigned a primary key and here you will see the title the note content in a scrollable div and the created at and updated at dates. There is also 3 buttons in this view, Edit to edit the note. Delete to delete and browse, to go back to the browse notes view.
+
+8. edit.html edit_note basically looks like the add new note except the note already contains a title and content. Just like the add_note_view there is the save and the exit buttons with the same functionality. if the note has been edited and saved a success message will read update saved. If the note has not been changed a success message will state that the note is saved successfully.
+
+7. delete.html delete_view from the read.html if the delete button/anchor is clicked you will be redirected to this view where you have to comfirm that you want to delete this note with the title of x. You will have the two options of comfirming and deleting the note or going back.
 
 ### CSS
 "style.css"
@@ -45,7 +55,6 @@ There are two JavaScript files.
 
 2. "script.js" To exit the add note or edit note i added a exit button. If this button is clicked, user gets a warning about potential unsaved changes and if confirmed gets redirected to dashboard (base.html).
 
-## The Backend
 
 ### Models
 #### User model
@@ -55,37 +64,8 @@ Djangos normal User but i made a few adjustments to the username and password re
 I created one superuser account for me thats the only admin.
 
 #### Note model
-Foreign key with full CRUD. In other words, Note can only be seen by the specific user that created the note and the admin. Title must contain 1-50 characthers. Note content only has a max length requirement of 1000 characthers.
-The note model also has created_at and updated_at which is displayed when browsing or reading notes.
+Foreign key with full CRUD. In other words, Note can only be seen by the specific user that created the note and the admin. Title must contain 1-50 characthers. Note content has a length requirement of 1 - 1000 characters. The note model also has created_at and updated_at which is displayed when browsing or reading notes.
 
-### Views
-1. signin_view
-The landing page signin.html contains the CustomUserAuthenticationForm. Two fields Username & Password, 
-
-2. signup_view
-signup.html contains the CustomUserRegistrationForm. Three fields, Username, Password1 & Password2.
-
-3. signout_view
-If the signout icon in the navbar for authenticated users is clicked this function will redirect them to the 'signin.html' all of the views except signin and signup is decorated with @login_required.
-
-4. base_view
-"base.html" This in the homepage for authenticated users, and this template is used in all the views for authenticated users except for signout_view. If login was successful you will see a success message here. Also it includes a header with a h1 title and a navbar with 3 icons: Add note, browse notes and sign out.
-It also contains a footer.
-
-5. browse_notes
-This view displays an overview of the users notes, title, created at & updated at date. title is an anchor tag and will take you to read.html.
-
-6. read_note
-"read.html" will display a specific note and give the user 3 options, Edit, Delete or Browse.
-
-7. new_note_view
-"note.html" If the plus icon in the navbar in the top left corner is clicked this view will appear. Containing the NoteForm with two input fields title and note content. There is also a save button that will save the note and redirect you to the read.html & a Exit button that will redirect you to 'base.html' if user confirms this since there could be usaved changes.
-
-8. edit_note
-"edit.html" pretty much the same as the add note, only this will display an existing note that you can edit. It has that same exit button as the new note view and will also redirect to read.html if save button is clicked. Once redirected the user will see a success message stating that the note has been saved either as it was before incase there has not been any changes made or updates saved.
-
-9. delete_note
-"delete.html" From read.html user has the option to delete a specific note. If button is clicked user is redirected to delete.html where user can either confirm and delete the form or go back.
 
 ### Forms
 #### 1. CustomUserRegistrationForm
@@ -104,9 +84,9 @@ This form requests Username and Password. It then compares the username and pass
 
 #### 3. NoteForm
 This Form requests a title of 1-50 characthers and has the two meta fields title & content.
-The content fields only requirement is that its input is shorter than 1000 characthers, but that is set in the Note model not in the form.
 
 ## Testing
+Firstly i have manually tested everything as far as i am aware. Also there is a test.py file with three tests one for the Note model one for the CustomUserRegistrationForm and one for CustomAuthenticationForm. The test for the model was generated by chatGPT. The other two i wrote myself but parts of the code i got from chatGPT aswell. I am using it as a teacher not as an assistant for the most part. Also i was struggling to get the tests running as the project was only set up to the elephantSQL database since i followed the Django Deployment Instructions PDF as i was setting up the project. Credits to Ian_alumni in the P4 Slack Group as i used the code or atleast parts of it to access the db.sqlite3 by creating a variable in my env.py setting DEBUG as TRUE. Then uncommenting the database that came with the template and using that database if debug=true. The test for the CustomUserRegistrationForm is not covering all potential errors but i believe i have manually tested all of them. The CustomAuthenticationForm test i believe covers that whole process since there are only a few possible outcomes there. 
 ## Formating, Validating, Testing & Final Photos
 
 ## My personal thaught on the project
@@ -145,6 +125,7 @@ specific icon urls:
 [Geekforgeeks.org](https://www.geeksforgeeks.org/)
 
 [chatGPT](https://openai.com/)
+Specifically wrote the test for the Note model and i have been using it as a teacher and a tool for the most part but that specific test i just copied straight from chatGPT. Also chatGPT gave me the primarykey solution for accessing specific notes to read edit or delete them. 
 
 [Project images from amiresponsive](https://ui.dev/amiresponsive)
 
