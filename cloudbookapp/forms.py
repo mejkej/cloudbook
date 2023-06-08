@@ -85,7 +85,9 @@ class NoteForm(forms.ModelForm):
     title = forms.CharField(
         min_length=1,
         max_length=50,
+        widget=forms.TextInput(attrs={'placeholder': '1 - 50 characters'}),
     )
+
 
     class Meta:
         model = Note

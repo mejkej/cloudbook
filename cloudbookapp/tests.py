@@ -64,7 +64,7 @@ class CustomUserCreationFormTestCase(TestCase):
 
 # Testing CustomAuthenticationForm
 class CustomAuthenticationFormTestCase(TestCase):
-    
+
     def setUp(self):
         self.credentials = {
             'username': 'testusername',
