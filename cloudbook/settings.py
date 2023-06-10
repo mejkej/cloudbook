@@ -28,9 +28,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['cloudbook.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['cloudbook.herokuapp.com']
 
 
 # Application definition
@@ -81,9 +81,10 @@ WSGI_APPLICATION = 'cloudbook.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+"""
 # Credits to Ian_alumni in the P4 Slack Group 
 import os
-...
+
 if os.environ.get("DEBUG") == 'True':
     DATABASES = {
         "default": {
@@ -92,7 +93,8 @@ if os.environ.get("DEBUG") == 'True':
         }
     }
 else:
-    DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+"""
+DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 LOGIN_URL = 'signin'
 
