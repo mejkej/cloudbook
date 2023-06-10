@@ -7,9 +7,9 @@ body {
     background-position: center;
     background-repeat: repeat;
     font-family: Helvetica, sans-serif;
-    height:100vh;
+    height:100%;
     width:100vw;
-    margin:0;
+    margin:0 auto;
     border:0;
     color:white;
 }
@@ -114,7 +114,9 @@ margin: 0 auto;
 
 /* MAIN */
 main {
-    height:50vh;
+    display:flex;
+    flex-direction: column; 
+    height:auto;
     width:80vw;
     margin-left:10vw;
     margin-right:10vw;
@@ -122,16 +124,21 @@ main {
 
 /* Container inside main */
 .maindiv {
-    display: flex;
     margin: 0 auto;
     flex-direction: column;
-    max-width: 700px;
+    width: 500px;
+    max-width: 80%;
     border:5px solid gold;
     border-radius: 10%;
     background-color: black;
-    height:80vh;
+    height:fit-content;
     padding-bottom: 20px;
-    margin-bottom:5%;
+    margin-bottom:3%;
+}
+
+#maindivpreauth {
+    width:300px;
+    
 }
 
 /* styling for a responsive maindiv */
@@ -229,21 +236,23 @@ button a:visited {
 }
 
 /* footer */
-footer {
-    position: fixed;
-    bottom: 0px;
-    bottom:0px;
-    width:100vw;
+main footer {
+    
+    align-self: last baseline;
+    top:80%;
+    width:300px;
+    max-width:80%;
+    height:fit-content;
     margin: 0 auto;
-    margin-top:15%;
-    border-top:5px solid black;
-    background-color: rgb(24, 91, 93);
+    margin-top:30px;
+    border:5px solid black;
+    border-radius: 10%;
+    margin-bottom:25px;
 }
 
 /* container inside footer */
 footer .textdiv {
-    width: 80%;
-    max-width: 700px;
+    max-width: 80%;
     padding-bottom:20px;
     margin: 0 auto;
 }

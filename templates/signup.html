@@ -21,7 +21,7 @@
 
 <main>
 
-    <div class="maindiv">
+    <div class="maindiv" id="maindivpreauth">
         <h2>Sign Up</h2>
         {% if messages %}
         {% for message in messages %}
@@ -48,18 +48,15 @@
         </form>
 
     </div>
-
-</main>
-
-<footer>
-    <div class="textdiv">
-        <h3 class="disclaimer">Disclaimer!</h3>
-        <p>Your Notes can currently be seen by yourself and the Admin aka me.
+    <footer>
+        <div class="textdiv">
+            <h3 class="disclaimer">Disclaimer!</h3>
+            <p>Your Notes can currently be seen by yourself and the Admin aka me.
             I am planing on changing this in the future to make a completely private and secure notes app.</p>
-        <a target="blank" href="https://github.com/mejkej/cloudbook">Info, Resources & More!</a>
-    </div>
-
-</footer>
+            <a target="blank" href="https://github.com/mejkej/cloudbook">Info, Resources & More!</a>
+        </div>
+    </footer>
+</main>
 <script src="{% static 'js/signup.js' %}"></script>
 </body>
 </html>
