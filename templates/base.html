@@ -14,7 +14,12 @@
         margin:0 auto;
         border:0;
         color:white;
+        
 }   
+    .success {
+        color:green;
+    }
+
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +53,8 @@
 
 {% if messages %}
 {% for message in messages %}
-<h2> {{ message }} </h2>
+{% if message.tags %}
+<h2 class="{{ message.tags }}"> {% endif %} {{ message }}</h2>
 {% endfor %}
 {% endif %}
 
