@@ -118,9 +118,9 @@ Firstly i have manually tested everything as far as i am aware. Also there is a 
 ![Browse Notes View 320px](readmeimgs/browsenotes320pxvw.png)
 ![Browse Notes View 200px](readmeimgs/browsenotes200pxvw.png)
 ![Browse Notes When there is notes](readmeimgs/browsenotesnotempty.png)
-![]()
 
 ## My personal thaught on the project
+Wow so that was P4 submitted on time finally caught up! Learned so much along the way during this project both regarding django python and all other technologies used, but also about myself how i probably should and should not learn things. Almost wish i could redo the project now that i have the knowledge i didnt before. I might have missed something and might have to resubmit the project but atleast submission was on time! 
 
 ## Contributing
 If anyone would like to continue working on the project your welcome to!
