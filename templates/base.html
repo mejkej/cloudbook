@@ -1,4 +1,21 @@
 {% load static %}
+<style>
+    body {
+    /* BODY STYLING */
+        text-align:center;
+        background-image: url("{% static 'imgs/bgimg.jpg' %}");
+        background-size: cover;
+        overflow-y:auto;
+        background-position: center;
+        background-repeat: repeat;
+        font-family: Helvetica, sans-serif;
+        height:fit-content;
+        width:100vw;
+        margin:0 auto;
+        border:0;
+        color:white;
+}   
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,24 +27,7 @@
     <title>Cloud Book</title>
 </head>
 <body>
-    <style>
-        body {
-        /* BODY STYLING */
-            text-align:center;
-            background-image: url("{% static 'imgs/bgimg.jpg' %}");
-            background-size: cover;
-            overflow-y:auto;
-            background-position: center;
-            background-repeat: repeat;
-            font-family: Helvetica, sans-serif;
-            height:fit-content;
-            width:100vw;
-            margin:0 auto;
-            border:0;
-            color:white;
-    }
-        
-    </style>
+
 <header>
     {% if user.is_authenticated %}
     <nav class="basenavbar">
