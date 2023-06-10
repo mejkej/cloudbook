@@ -1,5 +1,5 @@
-![Top of home page](#)
-[Link to the live project](#)
+![Top of read.html](readmeimgs/signupsuccessful.png)
+[Link to the live project](https://cloudbook.herokuapp.com/)
 # Cloud Book.
 ## Introduction:
 This is a web-based private note-taking application. Users can register, login, create, read, update, and delete their notes.
