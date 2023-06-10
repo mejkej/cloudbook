@@ -117,7 +117,7 @@ Firstly i have manually tested everything as far as i am aware. Also there is a 
 ![Browse Notes View 1440px](readmeimgs/browsenotes1440pxvw.png)
 ![Browse Notes View 320px](readmeimgs/browsenotes320pxvw.png)
 ![Browse Notes View 200px](readmeimgs/browsenotes200pxvw.png)
-![]()
+![Browse Notes When there is notes](readmeimgs/browsenotesnotempty.png)
 ![]()
 
 ## My personal thaught on the project
@@ -158,7 +158,6 @@ specific icon urls:
 [chatGPT](https://openai.com/)
 Specifically wrote the test for the Note model and i have been using it as a teacher and a tool for the most part but that specific test i just copied straight from chatGPT. Also chatGPT gave me the primarykey solution for accessing specific notes to read edit or delete them. 
 
-[Project images from amiresponsive](https://ui.dev/amiresponsive)
 
 [TechWithTims Youtube channel](https://www.youtube.com/@TechWithTim/featured)
 []()
