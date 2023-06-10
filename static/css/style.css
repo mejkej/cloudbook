@@ -2,7 +2,7 @@
 /* BODY STYLING */
 body {
     text-align:center;
-    background-image: element("bg-img");
+    background-image: url("{% static 'imgs/bgimg.jpg' %}");
     background-size: cover;
     overflow-y:auto;
     background-position: center;
@@ -15,9 +15,6 @@ body {
     color:white;
 }
 
-body .bgimg {
-background-image: -webkit-image-set();
-}
 
 /* Header */
 header {
