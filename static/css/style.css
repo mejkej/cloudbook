@@ -1,7 +1,7 @@
 /* BODY STYLING */
 body {
     text-align:center;
-    background-image: url("{% static 'imgs/bgimg.jpeg' %}");
+    background-image: url("{% static 'imgs/bgimg.jpg' %}");
     background-size: cover;
     overflow-y:auto;
     background-position: center;
@@ -30,8 +30,6 @@ header .basenavbar {
     margin-top:10px;
     
 }
-
-
 
 /* signin success message */
 main .success {
