@@ -7,7 +7,7 @@ body {
     background-position: center;
     background-repeat: repeat;
     font-family: Helvetica, sans-serif;
-    height:100%;
+    height:fit-content;
     width:100vw;
     margin:0 auto;
     border:0;
@@ -70,6 +70,20 @@ h1 {
     margin-right:5%;
 }
 
+/* notecontent container for read_view */
+.maindiv .readnotediv {
+    border:2px solid white;
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom: 5%;
+    padding-left:5%;
+    padding-right:5%;
+    word-wrap: break-word;
+    white-space: pre-line;
+    height:200px;
+    overflow-y:auto;
+}
+
 /* note title h3 a link to induvidual notes */
 .maindiv .browsenotes h3 {
     margin:0 auto;
@@ -82,8 +96,12 @@ h1 {
 /* a stay gold */
 .maindiv .browsenotes h3 a {
     color:gold;
-
 }
+
+.maindiv h3 a {
+    color:gold;
+}
+
 
 /* signin & signup view  nav anchor */
 .signinorupanchor {
@@ -114,9 +132,8 @@ margin: 0 auto;
 
 /* MAIN */
 main {
-    display:flex;
     flex-direction: column; 
-    height:auto;
+    height:fit-content;
     width:80vw;
     margin-left:10vw;
     margin-right:10vw;
@@ -138,11 +155,20 @@ main {
 
 #maindivpreauth {
     width:300px;
-    
+
 }
 
 /* styling for a responsive maindiv */
 .maindiv h2 {
+    max-width: 80%;
+    word-wrap: break-word;
+    white-space: pre-line;
+    margin: 0 auto;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.maindiv h3 {
     max-width: 80%;
     word-wrap: break-word;
     white-space: pre-line;
@@ -167,13 +193,28 @@ main {
     white-space: pre-line;
 }
 
+/* responsive input fields for signin and signup */
+.maindiv form #id_username{
+    max-width:90%;
+}
 
+.maindiv form #id_password1{
+    max-width:90%;
+}
+
+.maindiv form #id_password2{
+    max-width:90%;
+}
+
+.maindiv form #id_password{
+    max-width:90%;
+}
 /* if messages.success */
 .success {
     color:rgb(35, 188, 12);
 }
 
-/* div wraping the notecontent and date stamps in read.html */
+/* div wraping the notecontent and date stamps in read.html 
 .notecontentdiv {
     width:80%;
     height:200px;
@@ -181,7 +222,7 @@ main {
     margin: 0 auto;
     word-wrap: break-word;
     white-space: pre-line;
-}
+} */
 
 /* wraping anchor button on read.html for remaining functional and responsive */
 .maindiv.btnsdiv {
@@ -197,6 +238,9 @@ button {
     border-radius: 10%;
 }
 
+.title {
+    color:gold;
+}
 
 button:hover {
     border:4px solid gold;
@@ -222,9 +266,14 @@ button a:visited {
     color:rgb(35, 188, 12);
 }
 
-/* BODY STYLING */
-.maindiv.error {
+/* if message.error */
+.error {
     color:red;
+}
+
+/* if message.success */
+.success {
+    color:rgb(35, 188, 12);
 }
 
 /* errorlist for the sign up form */
@@ -236,10 +285,7 @@ button a:visited {
 }
 
 /* footer */
-main footer {
-    
-    align-self: last baseline;
-    top:80%;
+footer {
     width:300px;
     max-width:80%;
     height:fit-content;

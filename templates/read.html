@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="maindiv">
+
     {% if messages %}
     {% for message in messages %}
     <h2 class="success"> {{ message }} </h2>
@@ -8,10 +9,14 @@
     {% endif %}
     <form method="POST" class="form">
         {% csrf_token %}
-        <h2>{{ note.title }}</h2>
-        <div class="notecontentdiv">
-            <p>{{ note.content }}</p>
-            <p>Created: {{ note.created_at }} <br> Last Updated: {{ note.updated_at }}</p>
+        <h2>Reading:</h2>
+        <h3 class="title">{{ note.title }}</h3>
+        <div class="readnotediv">
+            <p>{{ note.content }}
+                <br>
+            Created: {{ note.created_at }} 
+                <br> 
+            Last Updated: {{ note.updated_at }}</p>
         </div>
     </form>
     

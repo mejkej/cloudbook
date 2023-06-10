@@ -4,12 +4,11 @@
     
     <h2>Browsing Notes:</h2>
         
-
         {% csrf_token %}
-
         {% if messages %}
         {% for message in messages %}
-        <h2> {{ message }} </h2>
+        {% if message.tags %}
+        <h2 class="{{ message.tags }}"> {% endif %} {{ message }}</h2>
         {% endfor %}
         {% endif %}
 
